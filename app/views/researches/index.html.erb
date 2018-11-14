@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    <h1>My researches</h1>
+  </div>
+  <div class="card-body">
+    <div class="pull-right">
+      <%= link_to new_research_path, class: 'btn btn-success' do %>
+        <%= fa_icon 'plus', text: 'New research' %>
+      <% end %>
+    </div>
+
+    <table class="responsive nowrap table table-hover" id="researches-datatable" data-source="<%= researches_path(format: :json)%>">
+      <thead>
+        <tr>
+          <th data-data="description">Description</th>
+          <th data-data="create_at">Created at</th>
+          <th data-data="dt_actions">Actions</th>
+        </tr>
+      </thead>
+    <tbody>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+<br>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :surveys
+  resources :researches
   devise_for :users
   root to: 'welcome#index'
 end

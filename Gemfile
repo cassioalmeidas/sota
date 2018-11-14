@@ -33,7 +33,10 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'devise'
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
-
+gem 'jquery-datatables'
+gem 'ajax-datatables-rails'
+gem 'font-awesome-rails'
+gem 'draper'
 
 
 # Use ActiveStorage variant
