@@ -27,6 +27,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
+# scaffold gems
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
+gem 'devise'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
+
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
