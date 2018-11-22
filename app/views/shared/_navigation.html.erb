@@ -6,12 +6,34 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <%= nav_bar do %>
-      <%= nav_link 'Home', root_path %>
-      <%= nav_link 'My researches', researches_path %>
+      <%= nav_link t('navbar.items.home', default: 'Home'), root_url %>
+      <%= nav_link t('navbar.items.my_researches', default: 'My researches'), researches_url %>
+      <li class="nav-item dropdown">
+      <%= link_to root_url, class: 'nav-link dropdown-toggle', "data-toggle": 'dropdown', "aria-haspopup": 'true', "aria-expanded": 'false'  do %>
+          <% if I18n.locale == :'pt-BR' %>
+            <%= content_tag(:span, '', class: 'flag-icon flag-icon-br') %>
+            <%= t("languages.selector.#{I18n.locale}") %>
+          <% else %>
+            <%= content_tag(:span, '', class: 'flag-icon flag-icon-us') %>
+            <%= t("languages.selector.#{I18n.locale}") %>
+          <% end %>
+        <% end %>
+        <div class="dropdown-menu" aria-labelledby="dropdown09">
+              <%= link_to url_for(locale: :"pt-BR"),  class: 'dropdown-item' do %>
+                <span class="flag-icon flag-icon-br"> </span> 
+                <%= t('languages.selector.pt-BR', default: 'Portuguese') %>
+              <% end %>
+              <%= link_to url_for(locale: :en), class: 'dropdown-item'  do %>
+                  <span class="flag-icon flag-icon-us"> </span>
+                  <%= t('languages.selector.en', default: 'English') %>
+              <% end %>
+        </div>
+      </li>      
     <% end %>
+
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="text" placeholder="<%= t('navbar.search', default: 'Search') %>" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('navbar.search', default: 'Search') %></button>
     </form>
   </div>
 </nav>

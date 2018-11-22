@@ -37,6 +37,12 @@ gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
 gem 'font-awesome-rails'
 gem 'draper'
+gem 'flag-icons-rails'
+
+# i18n
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
+gem 'devise-i18n'
+gem 'i18n-js'
 
 
 # Use ActiveStorage variant

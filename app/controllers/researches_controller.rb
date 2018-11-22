@@ -3,6 +3,8 @@ class ResearchesController < ApplicationController
 
   # GET /researches
   # GET /researches.json
+
+
   def index
     @researches = Research.all
     params["columns"] ||= { "0" => {"data" => "" } }

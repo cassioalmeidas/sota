@@ -5,6 +5,15 @@ GIT
   specs:
     devise-bootstrapped (0.2.0)
 
+GIT
+  remote: https://github.com/svenfuchs/rails-i18n.git
+  revision: e73597a28752107ea47a53291ec7387b0654bb82
+  branch: master
+  specs:
+    rails-i18n (5.1.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,6 +109,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.7.0)
+      devise (>= 4.5)
     draper (3.0.1)
       actionpack (~> 5.0)
       activemodel (~> 5.0)
@@ -109,12 +120,16 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    flag-icons-rails (3.1.0)
+      sass (~> 3.2)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.1.0)
+      i18n (>= 0.6.6, < 2)
     io-like (0.3.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -251,8 +266,11 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-bootstrapped!
+  devise-i18n
   draper
+  flag-icons-rails
   font-awesome-rails
+  i18n-js
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-rails
@@ -260,6 +278,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.1)
+  rails-i18n!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

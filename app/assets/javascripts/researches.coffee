@@ -8,6 +8,9 @@ $(document).on 'turbolinks:load', ->
     serverSide: true
     ajax: $('#researches-datatable').data('source')
     pagingType: 'full_numbers'
+    language:{
+      url: 'datatable_i18n'
+    }
     columns: [
       { data: 'description' }
       { data: 'created_at' }

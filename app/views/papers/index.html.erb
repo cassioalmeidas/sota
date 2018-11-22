@@ -1,0 +1,25 @@
+<h1>Papers</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-papers" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="research">Research</th>
+      <th data-data="title">Title</th>
+      <th data-data="abstract">Abstract</th>
+      <th data-data="keywords">Keywords</th>
+      <th data-data="authors">Authors</th>
+      <th data-data="source">Source</th>
+      <th data-data="publication_year">Publication year</th>
+      <th data-data="type">Type</th>
+      <th data-data="journal">Journal</th>
+      <th data-data="doi">Doi</th>
+      <th data-data="url">Url</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>
+
+<%= link_to 'New Paper', new_paper_path %>

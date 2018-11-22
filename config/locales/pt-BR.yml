@@ -1,0 +1,26 @@
+pt-BR:
+  dt_actions: Ações
+  languages:
+    selector:
+      pt-BR: Português
+      en: Inglês
+  buttons:
+    explore: Explorar
+    remove: Remover
+    edit: Editar
+    new_research: Nova pesquisa
+  activerecord:
+    attibutes:
+      research:
+        description: Descrição
+        created_at: Criado em
+  navbar:
+    search: 'Procurar'
+    items:
+      home: Principal
+      my_researches: Minhas pesquisas
+
+  researches:
+    index:
+      title: 'Minhas pesquisas'
+

@@ -17,13 +17,13 @@ class ResearchDecorator < ApplicationDecorator
   def dt_actions
     links = []
     links << h.link_to(h.research_path(object), class: 'btn btn-success') do 
-      h.fa_icon 'rocket', text: 'Explore'
+      h.fa_icon 'rocket', text: h.t('buttons.explore', default: 'Explore')
     end
     links << h.link_to(h.edit_research_path(object), class: 'btn btn-primary') do 
-      h.fa_icon 'edit', text: 'Edit'
+      h.fa_icon 'edit', text: h.t('buttons.edit', default: 'Edit')
     end
     links << h.link_to(h.research_path(object), method: :delete, remote: true, class: 'btn btn-danger') do 
-      h.fa_icon 'remove', text: 'Remove'
+      h.fa_icon 'remove', text: h.t('buttons.remove', default: 'Remove')
     end
     h.safe_join(links, '')
   end  
