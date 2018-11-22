@@ -19,7 +19,7 @@ class ResearchDatatable < AjaxDatatablesRails::ActiveRecord
         # id: record.id,
         # name: record.name
         description: record.description,
-        created_at: record.created_at,
+        created_at: I18n.l(record.created_at, format: :short),
         dt_actions: record.decorate.dt_actions
       }
     end
