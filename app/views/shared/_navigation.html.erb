@@ -31,9 +31,26 @@
       </li>      
     <% end %>
 
+    <% if current_user %>
+      <ul class="navbar-nav">
+                <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= t('navbar.user.my_profile', default: 'My profile')%>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                        <%= link_to t('navbar.user.preferences', default: 'Preferences'), '#', class: 'dropdown-item'  %>
+                        <div class="dropdown-divider"></div>
+                        <%= link_to(t('navbar.user.logout', default: 'Logout'),destroy_user_session_path, method: :delete, class: 'dropdown-item') %>
+                    </div>
+                </li>
+            </ul>      
+    <% end %>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="<%= t('navbar.search', default: 'Search') %>" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('navbar.search', default: 'Search') %></button>
     </form>
+    
   </div>
 </nav>

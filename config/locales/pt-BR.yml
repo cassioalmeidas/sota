@@ -15,12 +15,16 @@ pt-BR:
         description: Descrição
         created_at: Criado em
   navbar:
-    search: 'Procurar'
+    search: Procurar
     items:
       home: Principal
       my_researches: Minhas pesquisas
+    user:
+      my_profile: Meu perfil
+      preferences: Preferências
+      logout: Sair
 
   researches:
     index:
-      title: 'Minhas pesquisas'
+      title: Minhas pesquisas
 
