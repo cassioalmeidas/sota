@@ -11,7 +11,7 @@ class ResearchesController < ApplicationController
     params["length"]  ||= -1
     respond_to do |format|
       format.html
-      format.json { render json: ResearchDatatable.new(params) }
+      format.json { render json: ResearchDatatable.new(params, user: current_user) }
     end
   end
 

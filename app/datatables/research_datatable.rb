@@ -25,9 +25,13 @@ class ResearchDatatable < AjaxDatatablesRails::ActiveRecord
     end
   end
 
+  def user
+    @user ||= options[:user]
+  end
+
   def get_raw_records
     # insert query here
-    Research.all
+    user.researches.all
   end
 
 end
