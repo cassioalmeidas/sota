@@ -1,6 +1,5 @@
 class ResearchesController < ApplicationController
   before_action :set_research, only: [:show, :edit, :update, :destroy]
-
   # GET /researches
   # GET /researches.json
 
