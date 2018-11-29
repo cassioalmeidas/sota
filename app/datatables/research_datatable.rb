@@ -31,7 +31,7 @@ class ResearchDatatable < AjaxDatatablesRails::ActiveRecord
 
   def get_raw_records
     # insert query here
-    user.researches.all
+    user.researches.order('created_at DESC')
   end
 
 end

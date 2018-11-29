@@ -1,8 +1,8 @@
 class ResearchesController < ApplicationController
   before_action :set_research, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
   # GET /researches
   # GET /researches.json
-
 
   def index
     @researches = Research.all
@@ -22,6 +22,7 @@ class ResearchesController < ApplicationController
   # GET /researches/new
   def new
     @research = Research.new
+    respond_modal_with @research
   end
 
   # GET /researches/1/edit
@@ -31,17 +32,8 @@ class ResearchesController < ApplicationController
   # POST /researches
   # POST /researches.json
   def create
-    @research = Research.new(research_params)
-
-    respond_to do |format|
-      if @research.save
-        format.html { redirect_to @research, notice: 'Research was successfully created.' }
-        format.json { render :show, status: :created, location: @research }
-      else
-        format.html { render :new }
-        format.json { render json: @research.errors, status: :unprocessable_entity }
-      end
-    end
+    @research = Research.create(research_params.merge(user: current_user))
+    respond_modal_with @research, location: researches_path
   end
 
   # PATCH/PUT /researches/1

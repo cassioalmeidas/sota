@@ -38,6 +38,9 @@ gem 'ajax-datatables-rails'
 gem 'font-awesome-rails'
 gem 'draper'
 gem 'flag-icons-rails'
+gem 'simple_form'
+gem 'data-confirm-modal'
+gem 'responders'
 
 # i18n
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x

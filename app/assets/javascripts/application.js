@@ -16,6 +16,6 @@
 //= require jquery3
 //= require datatables
 //= require popper
-//= require bootstrap
-
+//= require bootstrap-sprockets
+//= require data-confirm-modal
 //= require_tree .

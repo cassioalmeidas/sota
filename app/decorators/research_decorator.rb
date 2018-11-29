@@ -22,7 +22,7 @@ class ResearchDecorator < ApplicationDecorator
     links << h.link_to(h.edit_research_path(object), class: 'btn btn-primary') do 
       h.fa_icon 'edit', text: h.t('buttons.edit', default: 'Edit')
     end
-    links << h.link_to(h.research_path(object), method: :delete, remote: true, class: 'btn btn-danger') do 
+    links << h.link_to(h.research_path(object), method: :delete, remote: true, class: 'btn btn-danger', data: {title: 'Confirmation', confirm: 'Are you sure?'}) do 
       h.fa_icon 'remove', text: h.t('buttons.remove', default: 'Remove')
     end
     h.safe_join(links, '')
