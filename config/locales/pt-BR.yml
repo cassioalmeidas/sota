@@ -19,8 +19,14 @@ pt-BR:
       my_profile: Meu perfil
       preferences: Preferências
       logout: Sair
-  modal:
+
+  modals:
     close: Fechar
+    dataConfirmModal:
+      title: 'Confirmação'
+      confirm: 'Você tem certeza disso?'
+      cancel: 'Cancelar'
+      commit: 'Sim, tenho!'
 
 
   researches:
