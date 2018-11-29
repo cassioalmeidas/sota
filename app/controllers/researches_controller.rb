@@ -54,10 +54,7 @@ class ResearchesController < ApplicationController
   # DELETE /researches/1.json
   def destroy
     @research.destroy
-    respond_to do |format|
-      format.html { redirect_to researches_url, notice: 'Research was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    respond_with @research, location: -> { researches_path }
   end
 
   private

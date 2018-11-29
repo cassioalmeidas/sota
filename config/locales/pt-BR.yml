@@ -41,9 +41,4 @@ pt-BR:
     attibutes:
       research:
         description: Descrição
-        created_at: Criado em    
-
-  simple_form:
-    labels:
-      research:
-        description: Descrição
+        created_at: Criado em
