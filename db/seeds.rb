@@ -6,4 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: 'jcassiocosta@gmail.com', password: 'sofonias')
+User.destroy_all
+Research.destroy_all
+
+cassio = User.create(email: 'jcassiocosta@gmail.com', password: 'sofonias')
+
+puts 'Seeding reseaches in database...'
+50.times do 
+  Research.create(description: Faker::Lorem.sentence, user: cassio)
+end
