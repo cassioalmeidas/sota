@@ -8,7 +8,7 @@ class ResearchDatatable < AjaxDatatablesRails::ActiveRecord
       # name: { source: "User.name", cond: :like }
       description: { source: 'Research.description', cond: :like, searchable: true, orderable: true },
       created_at:  { source: 'Research.created_at', cond: :like, orderable: true },
-      dt_actions:  { source: 'dt_actions', orderable: false }
+      dt_actions:  { source: 'dt_actions', orderable: false, searchable: false }
     }
   end
 
