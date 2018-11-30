@@ -1,5 +1,3 @@
-<% content_for :title do %>
-	<%= t('.title', default: 'New research')%>
-<% end %>
-<%= render 'form', research: @research %>
+<h1><%= t('.title', default: 'New research')%></h1>
 
+<%= render 'form', research: @research %>

@@ -9,6 +9,7 @@ pt-BR:
     remove: Remover
     edit: Editar
     new_research: Nova pesquisa
+    cancel: Cancelar
 
   navbar:
     search: Procurar
@@ -33,7 +34,15 @@ pt-BR:
     index:
       title: Minhas pesquisas
     new:
-      title: 'Nova pesquisa'
+      title: Nova pesquisa
+    edit:
+      title: Editando pesquisa
+    create:
+      success: Pesquisa criada com sucesso.
+    destroy:
+      success: Pesquisa removida com sucesso.
+    update:
+      success: Pesquisa atualizada com sucesso.
 
   activerecord:
     models:

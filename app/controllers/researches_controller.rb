@@ -1,6 +1,5 @@
 class ResearchesController < ApplicationController
   before_action :set_research, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
   # GET /researches
   # GET /researches.json
 
@@ -22,7 +21,6 @@ class ResearchesController < ApplicationController
   # GET /researches/new
   def new
     @research = Research.new
-    respond_modal_with @research
   end
 
   # GET /researches/1/edit
@@ -32,8 +30,17 @@ class ResearchesController < ApplicationController
   # POST /researches
   # POST /researches.json
   def create
-    @research = Research.create(research_params.merge(user: current_user))
-    respond_modal_with @research, location: researches_path
+    @research = Research.new(research_params)
+    @research.user = current_user
+    respond_to do |format|
+      if @research.save
+        format.html { redirect_to researches_url, notice: t('.success', default: 'Research was successfully created.') }
+        format.json { render :show, status: :created, location: @research }
+      else
+        format.html { render :new }
+        format.json { render json: @research.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /researches/1
@@ -41,7 +48,7 @@ class ResearchesController < ApplicationController
   def update
     respond_to do |format|
       if @research.update(research_params)
-        format.html { redirect_to @research, notice: 'Research was successfully updated.' }
+        format.html { redirect_to researches_url, notice: t('.success', default: 'Research was successfully updated.') }
         format.json { render :show, status: :ok, location: @research }
       else
         format.html { render :edit }
@@ -54,7 +61,10 @@ class ResearchesController < ApplicationController
   # DELETE /researches/1.json
   def destroy
     @research.destroy
-    respond_with @research, location: -> { researches_path }
+    respond_to do |format|
+      format.html { redirect_to researches_url, notice: t('.success', default: 'Research was successfully destroyed.') }
+      format.json { head :no_content }
+    end
   end
 
   private

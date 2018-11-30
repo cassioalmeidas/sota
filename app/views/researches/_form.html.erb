@@ -1,9 +1,5 @@
-<%= simple_form_for(research, remote: request.xhr?, html: { data: { modal: true } }) do |f| %>
-  <div class="modal-body">
-    <%= f.input :description  %>
-  </div>
-
-  <div class="modal-footer">
-    <%= f.button :submit, class: 'btn-success' %>
-  </div>
+<%= simple_form_for(research) do |f| %>
+  <%= f.input :description  %>
+  <%= link_to t('buttons.cancel'), researches_path, class: 'btn btn-secondary' %>
+  <%= f.button :submit, class: 'btn-success' %>
 <% end %>
