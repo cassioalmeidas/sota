@@ -1,0 +1,86 @@
+<div class="card">
+	<div class="card-header">
+		<h3><%= t '.upload_files', defaults: 'Upload files' %></h3>
+	</div>
+	<div class="card-body">
+		<%= simple_form_for [@research, @file] do |f| %>
+			  <%= f.input :file, as: :hidden, input_html: { value: @file.cached_file_data } %>
+			  <%= f.input :file, as: :file %>
+			  <%= f.button :submit, t('helpers.buttons.upload', default: 'Upload') %>
+		<% end %>
+		<br/>
+		<div class="table-responsive-sm">
+			<table class="table table-bordered table-sm">
+				<thead>
+					<tr>
+						<th scope="col"><%=t '.filename', default: 'Filename' %></th>
+						<th scope="col"><%=t '.size', default: 'Size' %></th>
+						<th scope="col"><%=t '.mime_type', default: 'MIME type' %></th>
+						<th scope="col"><%=t 'activerecord.attributes.file_resource.created_at', default: 'Created at' %></th>
+						<th scope="col"><%=t 'helpers.tables.actions', default: 'Actions' %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% if @files.empty? %>
+						<tr>
+							<td valign="top" colspan="5">
+								<%= t('.files_empty_table', default: '') %>
+							</td>
+						</tr>
+					<% end %>
+					<% @files.each do |f| %>
+						<tr>
+							<td><%= f.file.original_filename %></td>
+							<td><%= number_to_human_size(f.file.size) %></td>
+							<td><%= f.file.mime_type %></td>
+							<td><%= l(f.created_at, format: :short) %></td>
+							<td>
+								<% if f.imported? %>
+									<%= link_to import_research_file_resource_path(@research, f), class: 'btn btn-secondary btn-sm disabled' do  %>
+										<%= t 'helpers.buttons.imported', default: 'Imported' %>
+									<% end %>
+								<% else %>
+									<%= link_to import_research_file_resource_path(@research, f), class: 'btn btn-info btn-sm' do  %>
+										<%= t 'helpers.buttons.import', default: 'Import' %>
+									<% end %>
+								<% end %>
+
+								<%= link_to f.file_url, class: 'btn btn-success btn-sm', download: '' do  %>
+									<%= t 'helpers.buttons.download', default: 'Download' %>
+								<% end %>
+								
+								<%= link_to research_file_resource_path(@research, f), class: 'btn btn-danger btn-sm', method: :delete, data: dataConfirmModal do  %>
+									<%= t 'helpers.buttons.remove', default: 'Remove' %>
+								<% end %>				
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class="card">
+	<div class="card-header">
+		<h3><%= t '.retrieved_papers', defaults: 'Retrieved papers' %></h3>
+	</div>
+	<div class="card-body">
+		<div class="pull-right">
+			<% @research.papers.empty? ? disabled = ' disabled' : disabled = '' %>
+			<%= link_to remove_all_research_papers_path(@research), class: 'btn btn-danger'+disabled, method: :delete, data: dataConfirmModal do  %>			
+				<%= t('helpers.buttons.delete_all_papers', default: "Delete all papers") %>
+			<% end %>
+		</div>		
+		<table class="responsive table table-hover" id="papers-datatable" data-root-url="<%= root_path %>" data-source="<%= research_papers_path(@research, format: :json)%>">
+     	<thead>
+        <tr>
+        	<th data-data="id"><%= t('activerecord.attributes.paper.id', default: 'ID') %></th>
+          <th data-data="title"><%= t('activerecord.attributes.paper.title', default: 'Title') %></th>
+        </tr>
+      </thead>
+    <tbody>
+    </tbody>
+  	</table>
+	</div>
+</div>

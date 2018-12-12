@@ -3,13 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
+  rootUrl = $('#researches-datatable').data('root-url')
   $('#researches-datatable').dataTable
     processing: true
     serverSide: true
     ajax: $('#researches-datatable').data('source')
     pagingType: 'full_numbers'
     language:{
-      url: 'datatable_i18n'
+      url: rootUrl + '/datatable_i18n'
     }
     columns: [
       { data: 'description' }

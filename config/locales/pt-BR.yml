@@ -11,6 +11,24 @@ pt-BR:
     new_research: Nova pesquisa
     cancel: Cancelar
 
+  helpers:
+    buttons:
+      upload: Enviar
+      import: Importar
+      imported: Importado
+      remove: Remover
+      download: Baixar
+      delete_all_papers: Remover todos os artigos
+    links:
+      back: Voltar
+      edit: Editar
+      destroy: Excluir
+      confirm: Você tem certeza?
+      planning: Planejamento
+      retrieve_papers: Recuperar artigos
+    tables:
+      actions: Ações
+
   navbar:
     search: Procurar
     items:
@@ -35,6 +53,15 @@ pt-BR:
       title: Minhas pesquisas
     new:
       title: Nova pesquisa
+    show:
+      title: Detalhes da pesquisa
+    retrieve_papers:
+      upload_files: Enviar arquivos
+      retrieved_papers: Artigos recuperados
+      files_empty_table: Nenhum arquivo foi enviado ainda.
+      filename: Nome do arquivo
+      size: Tamanho
+      mime_type: Tipo MIME
     edit:
       title: Editando pesquisa
     create:
@@ -44,10 +71,30 @@ pt-BR:
     update:
       success: Pesquisa atualizada com sucesso.
 
+  file_resources:
+    create: 
+      success: O arquivo foi enviado com sucesso.
+    destroy:
+      success: O arquivo foi excluído com sucesso.
+    import:
+      success: O arquivo foi importado com sucesso.
+
+  papers:
+    remove_all:
+      success: 'Todos os artigos foram excluídos com sucesso.'
+
   activerecord:
     models:
       research: Pesquisa
-    attibutes:
+      file_resource:
+        one: Arquivo de importação
+        other: Arquivos de importação
+    attributes:
       research:
         description: Descrição
+        created_at: Criado em
+      paper:
+        id: ID
+        title: Título
+      file_resource:
         created_at: Criado em

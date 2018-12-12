@@ -1,0 +1,3 @@
+class FileResourceUploader < Shrine
+
+end

@@ -1,5 +1,5 @@
 class ResearchesController < ApplicationController
-  before_action :set_research, only: [:show, :edit, :update, :destroy]
+  before_action :set_research, only: [:show, :edit, :update, :destroy, :planning, :retrieve_papers]
   # GET /researches
   # GET /researches.json
 
@@ -65,6 +65,15 @@ class ResearchesController < ApplicationController
       format.html { redirect_to researches_url, notice: t('.success', default: 'Research was successfully destroyed.') }
       format.json { head :no_content }
     end
+  end
+
+  def planning
+    
+  end
+
+  def retrieve_papers
+    @file = @research.file_resources.new
+    @files = @research.file_resources.all
   end
 
   private

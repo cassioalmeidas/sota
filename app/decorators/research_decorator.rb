@@ -15,12 +15,6 @@ class ResearchDecorator < ApplicationDecorator
   # To render it in a datatable just add a column 'dt_actions' in
   # 'view_columns' and 'data' methods and call record.decorate.dt_actions
   def dt_actions
-    dataConfirmModal = {
-      title: I18n.t('modals.dataConfirmModal.title', default: 'Confirmation'),
-      confirm: I18n.t('modals.dataConfirmModal.confirm', default: 'Are you sure?'), 
-      cancel: I18n.t('modals.dataConfirmModal.cancel', default: 'Cancel'),
-      commit: I18n.t('modals.dataConfirmModal.commit', default: 'Confirm')
-    }
 
     links = []
     links << h.link_to(h.research_path(object), class: 'btn btn-success') do 
@@ -29,7 +23,7 @@ class ResearchDecorator < ApplicationDecorator
     links << h.link_to(h.edit_research_path(object), class: 'btn btn-primary') do 
       h.fa_icon 'edit', text: h.t('buttons.edit', default: 'Edit')
     end
-    links << h.link_to(h.research_path(object), method: :delete, remote: true, class: 'btn btn-danger', data: dataConfirmModal) do 
+    links << h.link_to(h.research_path(object), method: :delete, remote: true, class: 'btn btn-danger', data: h.dataConfirmModal) do 
       h.fa_icon 'remove', text: h.t('buttons.remove', default: 'Remove')
     end
     h.safe_join(links, '')

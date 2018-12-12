@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_224657) do
+ActiveRecord::Schema.define(version: 2018_11_30_115352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "file_resources", force: :cascade do |t|
+    t.bigint "research_id"
+    t.jsonb "file_data", null: false
+    t.boolean "imported", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["research_id"], name: "index_file_resources_on_research_id"
+  end
 
   create_table "papers", force: :cascade do |t|
     t.bigint "research_id"
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_224657) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "file_resources", "researches"
   add_foreign_key "papers", "researches"
   add_foreign_key "researches", "users"
 end

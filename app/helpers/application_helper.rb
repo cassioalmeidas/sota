@@ -28,5 +28,14 @@ def bootstrap_class_for flash_type
             end)
     end
     nil
+  end
+
+  def dataConfirmModal
+    result = {
+      title: I18n.t('modals.dataConfirmModal.title', default: 'Confirmation'),
+      confirm: I18n.t('modals.dataConfirmModal.confirm', default: 'Are you sure?'), 
+      cancel: I18n.t('modals.dataConfirmModal.cancel', default: 'Cancel'),
+      commit: I18n.t('modals.dataConfirmModal.commit', default: 'Confirm')
+    }
   end  
 end

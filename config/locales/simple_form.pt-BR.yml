@@ -13,4 +13,6 @@ pt-BR:
       
     labels:
       research:
-        description: Descrição
+        description: Descrição  
+      file_resource:
+        file: Arquivo

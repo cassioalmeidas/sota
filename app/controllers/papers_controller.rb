@@ -1,28 +1,27 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
-  # GET /papers
-  # GET /papers.json
+
   def index
-    @papers = Paper.all
+    params["columns"] ||= { "0" => {"data" => "" } }
+    params["length"]  ||= -1
+    respond_to do |format|
+      format.json { render json: PaperDatatable.new(params, research_id: params[:research_id])}
+    end
   end
 
-  # GET /papers/1
-  # GET /papers/1.json
   def show
   end
 
-  # GET /papers/new
+
   def new
     @paper = Paper.new
   end
 
-  # GET /papers/1/edit
+
   def edit
   end
 
-  # POST /papers
-  # POST /papers.json
   def create
     @paper = Paper.new(paper_params)
 
@@ -37,8 +36,6 @@ class PapersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /papers/1
-  # PATCH/PUT /papers/1.json
   def update
     respond_to do |format|
       if @paper.update(paper_params)
@@ -51,8 +48,6 @@ class PapersController < ApplicationController
     end
   end
 
-  # DELETE /papers/1
-  # DELETE /papers/1.json
   def destroy
     @paper.destroy
     respond_to do |format|
@@ -60,6 +55,16 @@ class PapersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def remove_all
+    @research = Research.find(params[:research_id])
+    @research.papers.delete_all
+    @research.file_resources.each do |file|
+      file.update_columns(imported: false)
+    end
+    redirect_to retrieve_papers_research_path(@research), notice: t('.success', default: 'All papers was successfully destroyed')
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
