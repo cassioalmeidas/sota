@@ -96,5 +96,12 @@ pt-BR:
       paper:
         id: ID
         title: Título
+        abstract: Resumo
+        keywords: Palavras-chave
+        authors: Autores
+        source: Fonte
+        publication_year: Ano de publicação
+        type: Tipo
+        journal: Jornal
       file_resource:
         created_at: Criado em

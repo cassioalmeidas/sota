@@ -1,5 +1,6 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
+  before_action :set_research
 
 
   def index
@@ -67,6 +68,11 @@ class PapersController < ApplicationController
 
 
   private
+
+    def set_research
+      @research = Research.find(params[:research_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_paper
       @paper = Paper.find(params[:id])

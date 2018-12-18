@@ -15,7 +15,7 @@ class PaperDatatable < AjaxDatatablesRails::ActiveRecord
     records.map do |record|
       {
         id: record.id,
-        title: record.title
+        title: record.decorate.link_to(research)
       }
     end
   end

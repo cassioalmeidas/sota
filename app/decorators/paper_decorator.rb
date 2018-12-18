@@ -9,4 +9,8 @@ class PaperDecorator < ApplicationDecorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+
+  def link_to(research)
+    h.link_to object.title, h.research_paper_path(research, object)
+  end
 end

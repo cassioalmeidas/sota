@@ -1,59 +1,60 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @paper.title %></h1>
+<h5>DOI: <%= @paper.doi %></h5>
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title"><%= t('activerecord.attributes.paper.abstract', default: 'Abstract') %></h5>
+    <p><%= @paper.abstract %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Research:</strong>
-  <%= @paper.research %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title"><%= t('activerecord.attributes.paper.keywords', default: 'Keywords') %></h5>
+    <p><%= @paper.keywords %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @paper.title %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title"><%= t('activerecord.attributes.paper.authors', default: 'Authors') %></h5>
+    <p><%= @paper.authors %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @paper.abstract %>
-</p>
 
-<p>
-  <strong>Keywords:</strong>
-  <%= @paper.keywords %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+     <h5 class="card-title"><%= t('activerecord.attributes.paper.source', default: 'Source') %></h5>
+    <p><%= @paper.source %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Authors:</strong>
-  <%= @paper.authors %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+ <h5 class="card-title"><%= t('activerecord.attributes.paper.publication_year', default: 'Publication year') %></h5>
+    <p><%= @paper.publication_year %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Source:</strong>
-  <%= @paper.source %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+     <h5 class="card-title"><%= t('activerecord.attributes.paper.type', default: 'Type') %></h5>
+    <p><%= @paper.type %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Publication year:</strong>
-  <%= @paper.publication_year %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+     <h5 class="card-title"><%= t('activerecord.attributes.paper.journal', default: 'Journal') %></h5>
+    <p><%= @paper.journal %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @paper.type %>
-</p>
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title">URL:</h5>
+    <p><%= link_to @paper.url, @paper.url %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Journal:</strong>
-  <%= @paper.journal %>
-</p>
-
-<p>
-  <strong>Doi:</strong>
-  <%= @paper.doi %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @paper.url %>
-</p>
-
-<%= link_to 'Edit', edit_paper_path(@paper) %> |
-<%= link_to 'Back', papers_path %>
+<%= link_to t('helpers.links.back', default: 'Back'), retrieve_papers_research_path(@research), class: 'btn btn-primary' %>
