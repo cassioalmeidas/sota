@@ -1,0 +1,15 @@
+{
+  "name": "SOTA - State of The Art",
+  "description": "Platform to support the production of bibliographic review.",
+  "website": "sota.cassioalmeidas.tk",
+  "repository": "https://gitlab.com/cassioalmeidas/sota",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true"
+  },
+  "addons": ["heroku-postgresql"]
+}
