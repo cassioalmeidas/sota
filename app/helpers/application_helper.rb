@@ -38,4 +38,8 @@ def bootstrap_class_for flash_type
       commit: I18n.t('modals.dataConfirmModal.commit', default: 'Confirm')
     }
   end  
+
+  def upload_server
+    Rails.env.production? ? :s3 : :app
+  end
 end

@@ -41,6 +41,8 @@ gem 'flag-icons-rails'
 gem 'simple_form'
 gem 'data-confirm-modal'
 gem 'shrine', '~> 2.0'
+gem 'aws-sdk-s3', '~> 1.2'
+gem 'sucker_punch', '~> 2.0'
 gem 'bibtex-ruby'
 
 # i18n
@@ -73,6 +75,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'dotenv-rails'
 end
 
 group :test do

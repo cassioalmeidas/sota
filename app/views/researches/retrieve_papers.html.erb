@@ -4,9 +4,10 @@
 	</div>
 	<div class="card-body">
 		<%= simple_form_for [@research, @file] do |f| %>
-			  <%= f.input :file, as: :hidden, input_html: { value: @file.cached_file_data } %>
-			  <%= f.input :file, as: :file %>
-			  <%= f.button :submit, t('helpers.buttons.upload', default: 'Upload') %>
+			<%= f.input :file, as: :hidden, input_html: { value: @file.cached_file_data, id: 'file-upload-result' } %>
+			<%= f.input :file, as: :file, input_html: { data: { upload_server: upload_server, upload_result_element: 'file-upload-result'}, accept: FileResourceUploader::ALLOWED_TYPES.join(",") } %>		
+			<div class="UppyInput-Progress col-md-12"></div>
+			<%= f.button :submit, t('helpers.buttons.save', default: 'Save') %>	
 		<% end %>
 		<br/>
 		<div class="table-responsive-sm">

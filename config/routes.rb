@@ -20,8 +20,15 @@ Rails.application.routes.draw do
           delete 'remove_all'
         end
       end
-
     end
+
+    if Rails.env.production?
+      mount Shrine.presign_endpoint(:cache) => "/s3/params"
+    else
+      # In development and test environment we're using filesystem storage
+      # for speed, so on the client side we'll upload files to our app.
+      mount Shrine.upload_endpoint(:cache) => "/upload"
+    end    
   end
 
   get '*path', to: redirect("/#{I18n.default_locale}/%{path}/"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

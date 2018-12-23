@@ -13,7 +13,7 @@ pt-BR:
 
   helpers:
     buttons:
-      upload: Enviar
+      save: Salvar
       import: Importar
       imported: Importado
       remove: Remover
