@@ -38,3 +38,9 @@ pt-BR:
       uploadXNewFiles: 
         0: Enviar +%{smart_count} arquivo
         1: Enviar +%{smart_count} arquivos
+
+    aws3:
+      preparingUpload: Preparando envio...
+
+    xhrupload:
+      timedOut: 'Upload parado por %{seconds} segundos, abortando.'

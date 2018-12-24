@@ -25,11 +25,18 @@ $(document).on 'turbolinks:load', ->
       locale: strings: I18n.t('uppy.statusbar')
     )
     if fileInput.dataset.uploadServer == 's3'
-      uppy.use Uppy.AwsS3, serverUrl: '/'
+      uppy.use(
+      	Uppy.AwsS3,
+      	serverUrl: '/',
+      	locale: I18n.t('uppy.aws3')
+      )
     else
-      uppy.use Uppy.XHRUpload,
+      uppy.use(
+      	Uppy.XHRUpload,
         endpoint: '/upload'
         fieldName: 'file'
+        locale: strings: I18n.t('uppy.xhrupload')
+      )
     uppy.on 'upload-success', (file, data) ->
       `var uploadedFileData`
       if fileInput.dataset.uploadServer == 's3'
