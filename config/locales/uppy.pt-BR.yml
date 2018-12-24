@@ -1,0 +1,40 @@
+pt-BR:
+  uppy:
+    core:
+      youCanOnlyUploadX:
+        0: Você pode enviar apenas %{smart_count} arquivo
+        1: Você pode enviar apenas %{smart_count} arquivos
+      youHaveToAtLeastSelectX:
+        0: Você tem que selecionar pelo menos %{smart_count} arquivo
+        1: Você tem que selecionar pelo menos %{smart_count} arquivos
+
+      exceedsSize: Esse arquivo excede o tamanho máximo permitido.
+      youCanOnlyUploadFileTypes: 'Você pode enviar apenas:'
+      companionError: Conexão com Companheiro falhou.
+
+    fileinput:
+      chooseFiles: Selecionar arquivos
+
+    statusbar:
+      uploading: Enviando
+      complete: Completo
+      uploadFailed: Envio falhou
+      pleasePressRetry: Por favor, envie o arquivo novamente
+      paused: Pausado
+      retry: Repetir
+      cancel: Cancelar
+      retryUpload: Repetir o upload
+      pauseUpload: Pausar upload
+      resumeUpload: Continuar upload
+      cancelUpload: Cancelar upload
+      filesUploadedOfTotal:
+        0: '%{complete} de %{smart_count} arquivo enviado'
+        1: '%{complete} of %{smart_count} arquivos enviado'
+      dataUploadedOfTotal: '%{complete} de %{total}'
+      xTimeLeft: '%{time} restantes'
+      uploadXFiles:
+        0: Enviar %{smart_count} arquivo
+        1: Enviar %{smart_count} arquivos
+      uploadXNewFiles: 
+        0: Enviar +%{smart_count} arquivo
+        1: Enviar +%{smart_count} arquivos

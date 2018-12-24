@@ -18,4 +18,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require data-confirm-modal
+//= require i18n
+//= require i18n/translations
+//= require localization
+//= require direct_upload
 //= require_tree .
