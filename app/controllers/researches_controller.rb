@@ -76,6 +76,7 @@ class ResearchesController < ApplicationController
   end
 
   def retrieve_papers
+    add_breadcrumb I18n.t('breadcrumbs.explore', default: 'explore'), :research_path
     add_breadcrumb I18n.t('breadcrumbs.retrieve_papers', default: 'retrieve papers'), :retrieve_papers_research_path
     @file = @research.file_resources.new
     @files = @research.file_resources.all
