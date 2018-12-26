@@ -3,6 +3,9 @@ class ResearchesController < ApplicationController
   # GET /researches
   # GET /researches.json
 
+  add_breadcrumb I18n.t('breadcrumbs.home', default: 'home'), :root_path
+  add_breadcrumb I18n.t('breadcrumbs.researches', default: 'researches'), :researches_path
+
   def index
     @researches = Research.all
     params["columns"] ||= { "0" => {"data" => "" } }
@@ -16,6 +19,7 @@ class ResearchesController < ApplicationController
   # GET /researches/1
   # GET /researches/1.json
   def show
+    add_breadcrumb I18n.t('breadcrumbs.explore', default: 'explore'), :research_path
   end
 
   # GET /researches/new
@@ -72,6 +76,7 @@ class ResearchesController < ApplicationController
   end
 
   def retrieve_papers
+    add_breadcrumb I18n.t('breadcrumbs.retrieve_papers', default: 'retrieve papers'), :retrieve_papers_research_path
     @file = @research.file_resources.new
     @files = @research.file_resources.all
   end

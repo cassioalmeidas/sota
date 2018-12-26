@@ -44,6 +44,7 @@ gem 'shrine', '~> 2.0'
 gem 'aws-sdk-s3', '~> 1.2'
 gem 'sucker_punch', '~> 2.0'
 gem 'bibtex-ruby'
+gem 'breadcrumbs_on_rails'
 
 # i18n
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x

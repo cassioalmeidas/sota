@@ -39,6 +39,12 @@ pt-BR:
       preferences: Preferências
       logout: Sair
 
+  breadcrumbs:
+    home: principal
+    researches: pesquisas
+    explore: explorar
+    retrieve_papers: recuperar artigos
+
   modals:
     close: Fechar
     dataConfirmModal:
