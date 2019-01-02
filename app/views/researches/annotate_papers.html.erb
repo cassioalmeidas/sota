@@ -1,0 +1,14 @@
+<%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+<%= render @paper %>
+
+<h4><%= t('.annotations', default: 'Annotations') %> </h4>
+<% if @paper.annotation.present? %>
+	<div id="annotation">
+		<%= render @annotation %>
+	</div>
+<% else %>
+	<%= render 'annotations/form', annotation: [@research, @paper, @annotation] %>
+<% end %>
+<br />
+<%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>

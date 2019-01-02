@@ -16,7 +16,9 @@ $(document).on 'turbolinks:load', ->
       { data: 'id' },
       { data: 'title' }
     ]
-
+  $('#annotation_category_name').autocomplete
+    source: $('#annotation_category_name').data('autocomplete-source')
+  return
 # turbolinks cache fix
 $(document).on 'turbolinks:before-cache', ->
   dataTable = $($.fn.dataTable.tables(true)).DataTable()

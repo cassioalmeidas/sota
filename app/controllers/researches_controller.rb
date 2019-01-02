@@ -1,5 +1,5 @@
 class ResearchesController < ApplicationController
-  before_action :set_research, only: [:show, :edit, :update, :destroy, :planning, :retrieve_papers]
+  before_action :set_research, only: [:show, :edit, :update, :destroy, :planning, :retrieve_papers, :annotate_papers]
   # GET /researches
   # GET /researches.json
 
@@ -80,6 +80,14 @@ class ResearchesController < ApplicationController
     add_breadcrumb proc { I18n.t('breadcrumbs.retrieve_papers', default: 'retrieve papers') }, :retrieve_papers_research_path
     @file = @research.file_resources.new
     @files = @research.file_resources.all
+  end
+
+  def annotate_papers
+    add_breadcrumb proc { I18n.t('breadcrumbs.explore', default: 'explore') }, :research_path
+    add_breadcrumb proc { I18n.t('breadcrumbs.annotate_papers', default: 'annotate papers') }, :annotate_papers_research_path
+    @papers = @research.papers.includes(:annotation).page(params[:page])
+    @paper = @papers.first
+    @annotation = @paper.annotation.nil? ? Annotation.new : @paper.annotation  
   end
 
   private

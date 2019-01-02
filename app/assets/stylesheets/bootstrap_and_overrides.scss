@@ -29,3 +29,25 @@ body {
 {
     font-size: 87px;
 }
+
+ul.ui-autocomplete{
+  position:absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  li{
+    background-color: #fff;
+    border-top: solid 1px #ddd;
+    margin: 0;
+    padding: 0;
+    a{
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active{
+      background-color: #fffcb2;
+    }
+  }
+}

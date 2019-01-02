@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       member do 
         get 'planning'
         get 'retrieve_papers'
+        get 'annotate_papers'
       end
       resources :file_resources do 
         member do 
@@ -16,11 +17,14 @@ Rails.application.routes.draw do
         end
       end
       resources :papers do 
+        resources :annotations, shallow: true
         collection do 
           delete 'remove_all'
         end
       end
     end
+
+    resources :annotation_categories
 
     if Rails.env.production?
       mount Shrine.presign_endpoint(:cache) => "/s3/params"

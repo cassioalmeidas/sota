@@ -14,6 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
+//= require jquery-ui/widgets/autocomplete
 //= require datatables
 //= require popper
 //= require bootstrap-sprockets
@@ -22,4 +23,5 @@
 //= require i18n/translations
 //= require localization
 //= require direct_upload
+//= require trix
 //= require_tree .

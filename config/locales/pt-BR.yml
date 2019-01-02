@@ -26,6 +26,7 @@ pt-BR:
       confirm: Você tem certeza?
       planning: Planejamento
       retrieve_papers: Recuperar artigos
+      annotate_papers: Fichar artigos
     tables:
       actions: Ações
 
@@ -44,6 +45,7 @@ pt-BR:
     researches: pesquisas
     explore: explorar
     retrieve_papers: recuperar artigos
+    annotate_papers: fichar artigos
 
   modals:
     close: Fechar
@@ -68,6 +70,8 @@ pt-BR:
       filename: Nome do arquivo
       size: Tamanho
       mime_type: Tipo MIME
+    annotate_papers:
+      annotations: Anotações
     edit:
       title: Editando pesquisa
     create:
@@ -84,6 +88,11 @@ pt-BR:
       success: O arquivo foi excluído com sucesso.
     import:
       success: O arquivo foi importado com sucesso.
+  annotations:
+    create:
+      success: Anotação criada com sucesso.
+    destroy:
+      success: Anotação removida com sucesso.
 
   papers:
     remove_all:
@@ -92,6 +101,7 @@ pt-BR:
   activerecord:
     models:
       research: Pesquisa
+      annotation: anotação
       file_resource:
         one: Arquivo de importação
         other: Arquivos de importação
@@ -111,3 +121,5 @@ pt-BR:
         journal: Jornal
       file_resource:
         created_at: Criado em
+      annotation:
+        category_name: Categoria
