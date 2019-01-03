@@ -3,6 +3,7 @@ class Research < ApplicationRecord
   validates :description, :user_id, presence: true
   has_many :file_resources, dependent: :destroy
   has_many :papers, dependent: :destroy
+  has_many :annotations, through: :papers
 
   def import_papers(file)
     bibtex = BibTeX.open(file)
