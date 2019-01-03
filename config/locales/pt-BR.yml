@@ -19,6 +19,7 @@ pt-BR:
       remove: Remover
       download: Baixar
       delete_all_papers: Remover todos os artigos
+      annotations_reports: Relatórios de anotações
     links:
       back: Voltar
       edit: Editar
@@ -46,6 +47,7 @@ pt-BR:
     explore: explorar
     retrieve_papers: recuperar artigos
     annotate_papers: fichar artigos
+    annotations_reports: relatórios de anotações
 
   modals:
     close: Fechar

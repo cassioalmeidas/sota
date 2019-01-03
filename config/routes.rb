@@ -9,7 +9,8 @@ Rails.application.routes.draw do
       member do 
         get 'planning'
         get 'retrieve_papers'
-        get 'annotate_papers'
+        get 'annotate_papers'  
+        get 'annotations_reports'     
       end
       resources :file_resources do 
         member do 
@@ -17,7 +18,8 @@ Rails.application.routes.draw do
         end
       end
       resources :papers do 
-        resources :annotations, shallow: true
+        resources :annotations, shallow: true do 
+        end
         collection do 
           delete 'remove_all'
         end
