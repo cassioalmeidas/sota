@@ -13,7 +13,7 @@ $(document).on 'turbolinks:load', ->
       id: fileInput.id
       autoProceed: true
       allowMultipleUploads: false
-      restrictions: allowedFileTypes: fileInput.accept.split(',')
+      #restrictions: allowedFileTypes: fileInput.accept.split(',')
       locale: strings: I18n.t('uppy.core')).use(Uppy.FileInput,
       target: fileInput.parentNode
       locale: strings: I18n.t('uppy.fileinput'))
