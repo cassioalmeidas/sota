@@ -1,0 +1,10 @@
+<h1><%= @research.description %></h1>
+<% @annotations.each do |cat, annotations| %>
+	<h2><%= cat %></h2>
+	<% annotations.each do |annotation| %>
+		<h5><%= annotation.paper.title %></h5>
+		<p><%= sanitize annotation.body %></p>
+		<p><%= annotation.paper.doi %></p>
+	<% end %>
+<% end %>
+	

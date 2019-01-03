@@ -95,6 +95,12 @@ class ResearchesController < ApplicationController
     add_breadcrumb proc { I18n.t('breadcrumbs.annotate_papers', default: 'annotate papers') }, :annotate_papers_research_path
     add_breadcrumb proc { I18n.t('breadcrumbs.annotations_reports', default: 'annotations reports') }, :annotations_reports_research_path
     @annotations = @research.annotations.includes(:paper).group_by { |a| a.annotation_category.name }
+    respond_to do |format|
+      format.html 
+      format.docx do 
+        render docx: 'annotations_reports', filename: "#{@research.description}.docx"
+      end
+    end
   end
 
   private

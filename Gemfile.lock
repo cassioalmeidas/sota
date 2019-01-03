@@ -165,6 +165,10 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    htmltoword (1.1.0)
+      actionpack
+      nokogiri
+      rubyzip (>= 1.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     i18n-js (3.2.0)
@@ -336,6 +340,7 @@ DEPENDENCIES
   faker!
   flag-icons-rails
   font-awesome-rails
+  htmltoword
   i18n-js
   jbuilder (~> 2.5)
   jquery-datatables
