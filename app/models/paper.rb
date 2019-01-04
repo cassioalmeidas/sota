@@ -1,6 +1,6 @@
 class Paper < ApplicationRecord
   belongs_to :research
-  has_one :annotation
+  has_one :annotation, dependent: :destroy
   self.per_page = 1
 
   scope :unannotated, -> do 
