@@ -1,5 +1,10 @@
 {
   "name": "sota",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "docxtemplater": "^3.9.5",
+    "file-saver": "^2.0.0",
+    "jszip": "2",
+    "jszip-utils": "^0.0.2"
+  }
 }

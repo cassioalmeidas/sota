@@ -1,5 +1,6 @@
 class ResearchesController < ApplicationController
   before_action :set_research, only: [:show, :edit, :update, :destroy, :planning, :retrieve_papers, :annotate_papers, :annotations_reports]
+  protect_from_forgery except: :annotations_reports
   # GET /researches
   # GET /researches.json
 
@@ -97,9 +98,8 @@ class ResearchesController < ApplicationController
     @annotations = @research.annotations.includes(:paper).group_by { |a| a.annotation_category.name }
     respond_to do |format|
       format.html 
-      format.docx do 
-        render docx: 'annotations_reports', filename: "#{@research.description}.docx"
-      end
+      format.json
+      format.js
     end
   end
 

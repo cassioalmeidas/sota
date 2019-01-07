@@ -23,5 +23,9 @@
 //= require i18n/translations
 //= require localization
 //= require direct_upload
+//= require docxtemplater/build/docxtemplater.min
+//= require jszip/dist/jszip.min
+//= require file-saver/dist/FileSaver.min
+//= require jszip-utils/dist/jszip-utils.min
 //= require trix
 //= require_tree .

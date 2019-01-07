@@ -49,7 +49,8 @@ gem 'trix-rails', require: 'trix'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
 gem 'jquery-ui-rails'
-gem 'htmltoword'
+gem 'reverse_markdown'
+gem 'pandoc-ruby'
 
 # i18n
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
