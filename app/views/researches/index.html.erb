@@ -9,17 +9,19 @@
       <% end %>
     </div>
 
-    <table class="responsive nowrap table table-hover" id="researches-datatable" data-root-url="<%= root_path %>" data-source="<%= researches_path(format: :json)%>">
-      <thead>
-        <tr>
-          <th data-data="description"><%= t('activerecord.attributes.research.description', default: 'Description') %></th>
-          <th data-data="create_at"><%= t('activerecord.attributes.research.created_at', default: 'Created at') %></th>
-          <th data-data="dt_actions"><%= t('dt_actions', default: 'Actions') %></th>
-        </tr>
-      </thead>
-    <tbody>
-    </tbody>
-  </table>
+		<div class="responsive">
+	    <table class="table table-hover" id="researches-datatable" data-root-url="<%= root_path %>" data-source="<%= researches_path(format: :json)%>">
+	      <thead>
+	        <tr>
+	          <th data-data="description"><%= t('activerecord.attributes.research.description', default: 'Description') %></th>
+	          <th data-data="create_at"><%= t('activerecord.attributes.research.created_at', default: 'Created at') %></th>
+	          <th data-data="dt_actions"><%= t('dt_actions', default: 'Actions') %></th>
+	        </tr>
+	      </thead>
+		    <tbody>
+		    </tbody>
+	  	</table>
+	  </div>
   </div>
 
 </div>
