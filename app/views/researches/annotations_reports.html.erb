@@ -8,6 +8,7 @@
 		<h1><%= @research.description %></h1>
 	</div>
 	<div class="card-body">
+		<%= @annotations.size %>
 		<% @annotations.each do |cat, annotations| %>
 			<h2><%= cat %></h2>
 			<% annotations.each do |annotation| %>
