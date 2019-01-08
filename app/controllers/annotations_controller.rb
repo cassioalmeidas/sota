@@ -14,7 +14,7 @@ class AnnotationsController < ApplicationController
     @annotation.paper = @paper
     respond_to do |format|
       if @annotation.save 
-        format.html { redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Annotation was successfully created.')) }
+        format.html { redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Annotation was successfully created.'))}
       else
         format.html { redirect_to annotate_papers_research_path(@research) }
         format.json { render json: @annotation.errors, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class AnnotationsController < ApplicationController
     research = @annotation.paper.research
     @annotation.destroy
     respond_to do |format|
-      format.html { redirect_to annotate_papers_research_path(research), notice: t('.success', default: 'Annotation was successfully removed') }
+      format.html { redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Annotation was successfully removed.'))}
     end
   end
   
