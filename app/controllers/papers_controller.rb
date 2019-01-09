@@ -1,5 +1,7 @@
+require "google/cloud/translate"
+
 class PapersController < ApplicationController
-  before_action :set_paper, only: [:show, :edit, :update, :destroy]
+  before_action :set_paper, only: [:show, :edit, :update, :destroy, :translate]
   before_action :set_research
 
 
@@ -64,6 +66,15 @@ class PapersController < ApplicationController
       file.update_columns(imported: false)
     end
     redirect_to retrieve_papers_research_path(@research), notice: t('.success', default: 'All papers was successfully destroyed')
+  end
+
+
+  def translate
+    translate = Google::Cloud::Translate.new project: ENV['CLOUD_PROJECT_ID']
+    @abstract_translated = translate.translate @paper.abstract, to: "pt-BR"
+    respond_to do |format|
+      format.js
+    end
   end
 
 

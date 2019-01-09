@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       resources :papers do 
         resources :annotations, shallow: true do 
         end
+        member do 
+          get :translate
+        end
         collection do 
           delete 'remove_all'
         end

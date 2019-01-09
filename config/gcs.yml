@@ -1,0 +1,2 @@
+CLOUD_PROJECT_ID: 'sotaproject'
+GOOGLE_APPLICATION_CREDENTIALS: 'config/secrets/sotaproject.json'

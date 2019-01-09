@@ -12,8 +12,9 @@
 
 
 
-<div class="row">
+<div class="row paper">
 	<%= render @paper %>	
+	<%= link_to 'translate to portuguese', translate_research_paper_path(@research, @paper), remote: true, class: 'link-translate' %>
 </div>
 
 <h4><%= t('.annotations', default: 'Annotations') %> </h4>
