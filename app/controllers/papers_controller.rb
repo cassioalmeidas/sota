@@ -70,7 +70,7 @@ class PapersController < ApplicationController
 
 
   def translate
-    translate = Google::Cloud::Translate.new project: ENV['CLOUD_PROJECT_ID']
+    translate = Google::Cloud::Translate.new project: ENV['TRANSLATE_PROJECT']
     @abstract_translated = translate.translate @paper.abstract, to: "pt-BR"
     respond_to do |format|
       format.js

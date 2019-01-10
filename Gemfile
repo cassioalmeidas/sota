@@ -41,7 +41,6 @@ gem 'flag-icons-rails'
 gem 'simple_form'
 gem 'data-confirm-modal'
 gem 'shrine', '~> 2.0'
-gem 'aws-sdk-s3', '~> 1.2'
 gem 'sucker_punch', '~> 2.0'
 gem 'bibtex-ruby'
 gem 'breadcrumbs_on_rails'
@@ -51,6 +50,9 @@ gem 'will_paginate-bootstrap4'
 gem 'jquery-ui-rails'
 gem 'reverse_markdown'
 gem 'pandoc-ruby'
+gem "citeproc-ruby", "~> 1.1"
+gem "csl-styles", "~> 1.0"
+
 
 # i18n
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
@@ -83,7 +85,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-  gem 'dotenv-rails'
 end
 
 group :test do
@@ -97,8 +98,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+gem 'aws-sdk-s3', '~> 1.2'
 gem "google-cloud-translate", "~> 1.2"
-
-gem "citeproc-ruby", "~> 1.1"
-
-gem "csl-styles", "~> 1.0"
