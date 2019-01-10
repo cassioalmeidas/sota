@@ -98,3 +98,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "google-cloud-translate", "~> 1.2"
+
+gem "citeproc-ruby", "~> 1.1"
+
+gem "csl-styles", "~> 1.0"

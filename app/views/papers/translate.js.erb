@@ -1,2 +1,2 @@
-$('.abstract').html("<%= @abstract_translated.text %>")
-$('.link-translate').html('Undo')
+var element = document.querySelector("trix-editor")
+element.editor.insertString("<%= @abstract_translated.text %>")

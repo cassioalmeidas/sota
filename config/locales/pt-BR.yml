@@ -28,6 +28,7 @@ pt-BR:
       planning: Planejamento
       retrieve_papers: Recuperar artigos
       annotate_papers: Fichar artigos
+      copy_trans_to_editor: Copiar tradução para o editor
     tables:
       actions: Ações
 
