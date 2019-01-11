@@ -4,6 +4,7 @@ class Research < ApplicationRecord
   has_many :file_resources, dependent: :destroy
   has_many :papers, dependent: :destroy
   has_many :annotations, through: :papers
+  has_many :annotation_categories, through: :annotations
 
   def import_papers(file)
     bibtex = BibTeX.open(file)
