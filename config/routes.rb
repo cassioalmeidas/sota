@@ -18,7 +18,8 @@ Rails.application.routes.draw do
         end
       end
       resources :papers do 
-        resources :annotations, shallow: true do 
+        resources :annotations, shallow: true do
+
         end
         member do 
           get :translate
@@ -26,10 +27,10 @@ Rails.application.routes.draw do
         collection do 
           delete 'remove_all'
         end
+        resources :annotation_categories, shallow: true do 
+        end
       end
     end
-
-    resources :annotation_categories
 
     if Rails.env.production?
       mount Shrine.presign_endpoint(:cache) => "/s3/params"

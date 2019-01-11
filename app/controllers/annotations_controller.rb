@@ -4,6 +4,8 @@ class AnnotationsController < ApplicationController
   before_action :set_paper, only: [:create]
 
   def edit
+    @paper = @annotation.paper
+    @research = @paper.research
     respond_to do |format|
       format.js
     end

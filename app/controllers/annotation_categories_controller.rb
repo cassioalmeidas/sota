@@ -1,6 +1,13 @@
 class AnnotationCategoriesController < ApplicationController
+  before_action :set_research, only: [:index]
+
   def index
-    @categories = AnnotationCategory.order(:name).where("name like ?", "%#{params[:term]}%")
+    @categories = @research.annotation_categories.order(:name).where("name like ?", "%#{params[:term]}%").distinct
     render json: @categories.map(&:name)
   end
+
+  private 
+    def set_research
+      @research = Research.find(params[:research_id])
+    end
 end
