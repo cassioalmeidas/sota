@@ -75,6 +75,10 @@ pt-BR:
       mime_type: Tipo MIME
     annotate_papers:
       annotations: Anotações
+    annotations_reports:
+      annotations_category_list: Lista de categorias de anotações
+      settings: Configurações
+      reports: Relatórios
     edit:
       title: Editando pesquisa
     create:

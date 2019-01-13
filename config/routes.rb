@@ -29,6 +29,10 @@ Rails.application.routes.draw do
         end
         resources :annotation_categories, shallow: true do 
         end
+        
+      end
+      resources :annotation_categories, shallow:true,  only: [:sort] do 
+        collection { post :sort }
       end
     end
 

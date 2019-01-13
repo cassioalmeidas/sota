@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery3
 //= require jquery-ui/widgets/autocomplete
+//= require jquery-ui/widgets/sortable
 //= require datatables
 //= require popper
 //= require bootstrap-sprockets

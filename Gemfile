@@ -52,6 +52,7 @@ gem 'reverse_markdown'
 gem 'pandoc-ruby'
 gem "citeproc-ruby", "~> 1.1"
 gem "csl-styles", "~> 1.0"
+gem 'acts_as_list'
 
 
 # i18n

@@ -1,21 +1,44 @@
-<div class="card">
-	<div class="card-header">
-		<div class="float-right">
-			<%= link_to annotations_reports_research_path(@research, format: :js), class: 'btn btn-primary btn-sm', remote: true do %>
-				<%= fa_icon 'download', text: 'Word' %>
-			<% end %>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+		<a class="nav-item nav-link active" id="nav-reports-tab" data-toggle="tab" href="#nav-reports" role="tab" aria-controls="nav-reports" aria-selected="true"><%= t('.reports', default: 'Reports') %></a>
+    <a class="nav-item nav-link" id="nav-settings-tab" data-toggle="tab" href="#nav-settings" role="tab" aria-controls="nav-settings" aria-selected="false"><%= t('.settings', default: 'Settings') %></a>
+	</div>
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-reports" role="tabpanel" aria-labelledby="nav-reports-tab">
+			<div class="card">
+				<div class="card-header">
+					<div class="float-right">
+						<%= link_to annotations_reports_research_path(@research, format: :js), class: 'btn btn-primary btn-sm', remote: true do %>
+							<%= fa_icon 'download', text: 'Word' %>
+						<% end %>
+					</div>
+					<h1><%= @research.description %></h1>
+				</div>
+				<div class="card-body">
+					<% @annotations.each do |cat, annotations| %>
+						<h2><%= cat %></h2>
+						<% annotations.each do |annotation| %>
+							<h5><%= annotation.paper.title %></h5>
+							<p><%= sanitize annotation.body %></p>
+							<p><%= annotation.paper.doi %></p>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
 		</div>
-		<h1><%= @research.description %></h1>
+
+		<div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">
+			<div class="card">
+				<div class="card-header">
+					<h2><%= t('.annotations_category_list', default: 'Annotations category list') %></h2>
+				</div>
+				<div id="annotations_category" class="list-group" data-update-url="<%= sort_research_annotation_categories_path(@research) %>">
+					<% @research.annotation_categories.distinct.each do |cat| %>
+					  <%= link_to h(cat.name), cat, class: "list-group-item", id: dom_id(cat) %>
+					<% end %>
+				</div>		
+			</div>
+		</div>
+		
+				</nav>		
 	</div>
-	<div class="card-body">
-		<%= @annotations.size %>
-		<% @annotations.each do |cat, annotations| %>
-			<h2><%= cat %></h2>
-			<% annotations.each do |annotation| %>
-				<h5><%= annotation.paper.title %></h5>
-				<p><%= sanitize annotation.body %></p>
-				<p><%= annotation.paper.doi %></p>
-			<% end %>
-		<% end %>
-	</div>
-</div>
