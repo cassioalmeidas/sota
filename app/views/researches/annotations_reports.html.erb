@@ -32,9 +32,12 @@
 				<div class="card-header">
 					<h2><%= t('.annotations_category_list', default: 'Annotations category list') %></h2>
 				</div>
-				<div id="annotations_category" class="list-group" data-update-url="<%= sort_research_annotation_categories_path(@research) %>">
+				<ul id="annotations_category" class="list-group" data-update-url="<%= sort_research_annotation_categories_path(@research) %>">
 					<% @research.annotation_categories.distinct.each do |cat| %>
-					  <%= link_to h(cat.name), cat, class: "list-group-item", id: dom_id(cat) %>
+						<%= content_tag :li, class: "list-group-item", id: dom_id(cat) do 	%>
+							<%= fa_icon 'arrows', class: 'handle' %>
+					  	<%= h(cat.name) %>
+					  <% end %>
 					<% end %>
 				</div>		
 			</div>
