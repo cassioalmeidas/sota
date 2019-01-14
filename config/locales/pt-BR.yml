@@ -75,6 +75,9 @@ pt-BR:
       mime_type: Tipo MIME
     annotate_papers:
       annotations: Anotações
+      all_papers: Todos
+      only_annotated_papers: Com anotações
+      only_unannotated_papers: Sem anotações
     annotations_reports:
       annotations_category_list: Lista de categorias de anotações
       settings: Configurações

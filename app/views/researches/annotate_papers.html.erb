@@ -1,13 +1,21 @@
 <div class="row">
 	<div class="col-sm">
-		<%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+		<nav class="nav nav-pills flex-column flex-sm-row">
+			<%= active_link_to t('.all_papers', default: 'All papers'), annotate_papers_research_path(@research), class: 'flex-sm-fill text-sm-center nav-link' %>
+			<%= active_link_to t('.only_annotated_papers', default: 'Only annotated papers'), annotate_papers_research_path(@research, annotated: 1), class: 'flex-sm-fill text-sm-center nav-link' %>
+			<%= active_link_to t('.only_unannotated_papers', default: 'Only unannotated papers'), annotate_papers_research_path(@research, annotated: 0), class: 'flex-sm-fill text-sm-center nav-link' %>
+		  
+		</nav>
 	</div>
 	<div class="col-sm">
 		<div class="float-right">
 			<%= link_to t('helpers.buttons.annotations_reports', default: 'Annotations report'), annotations_reports_research_path(@research), class: 'btn btn-lg btn-primary' %>
-		</div>		
+		</div>
 	</div>
-	
+</div>	
+
+<div class="row">
+	<%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>	
 
 
