@@ -172,7 +172,6 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
-    filterrific (5.1.0)
     flag-icons-rails (3.1.0)
       sass (~> 3.2)
     font-awesome-rails (4.7.0.4)
@@ -380,7 +379,6 @@ DEPENDENCIES
   dotenv-rails
   draper
   faker!
-  filterrific
   flag-icons-rails
   font-awesome-rails
   google-cloud-translate (~> 1.2)
