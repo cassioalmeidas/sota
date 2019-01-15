@@ -14,14 +14,13 @@
 	</div>
 </div>	
 
+<% if !@paper.nil? %>	
 <div class="row">
 	<%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>	
 
-
-
 <div class="row paper">
-	<%= render @paper %>	
+	<%= render @paper %>
 	<%= link_to t('helpers.links.copy_trans_to_editor', default: 'Copy translation to editor'), translate_research_paper_path(@research, @paper), remote: true, class: 'link-translate' %>
 </div>
 
@@ -35,3 +34,8 @@
 <% end %>
 <br />
 <%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<% else %>
+	<div class="alert alert-warning" role="alert">
+	  <%= t '.no_papers_msg', default: 'No papers' %>
+	</div>
+<% end %>

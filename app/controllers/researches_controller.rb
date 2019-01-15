@@ -90,8 +90,12 @@ class ResearchesController < ApplicationController
     if params[:annotated].present?
       params[:annotated] == '1' ? @papers = @papers.annotated : @papers = @papers.unannotated  
     end
-    @paper = @papers.first
-    @annotation = @paper.annotation.nil? ? Annotation.new : @paper.annotation  
+    if @papers.empty?
+      render :annotate_papers
+    else
+      @paper = @papers.first
+      @annotation = @paper.annotation.nil? ? Annotation.new : @paper.annotation  
+    end
   end
 
   def annotations_reports

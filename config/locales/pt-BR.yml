@@ -78,6 +78,7 @@ pt-BR:
       all_papers: Todos
       only_annotated_papers: Com anotações
       only_unannotated_papers: Sem anotações
+      no_papers_msg: Sem artigos
     annotations_reports:
       annotations_category_list: Lista de categorias de anotações
       settings: Configurações
