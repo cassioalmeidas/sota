@@ -61,7 +61,7 @@ class PapersController < ApplicationController
 
   def remove_all
     @research = Research.find(params[:research_id])
-    @research.papers.delete_all
+    @research.papers.destroy_all
     @research.file_resources.each do |file|
       file.update_columns(imported: false)
     end
