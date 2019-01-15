@@ -21,6 +21,7 @@
 							<h5><%= annotation.paper.title %></h5>
 							<p><%= sanitize annotation.body %></p>
 							<p><%= annotation.paper.doi %></p>
+							<p><strong><%= t('.keywords', default: 'Keywords') %>: </strong><%= annotation.paper.keywords %></p>
 						<% end %>
 					<% end %>
 				</div>
