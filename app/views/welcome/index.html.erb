@@ -1,6 +1,13 @@
 <div id="welcome-message">
-	<h1>Welcome to NITLabSOTA</h1>
+	<h1><%= t('.welcome_title', default:'Welcome to SOTA') %></h1>
 	<p class="lead">
-		This description is coming soon.
+		<%= sanitize t('.welcome_description', default: 'Write scientific texts in an agile and organized way.') %>
 	</p>
+
+	<div class="alert alert-success" role="alert">
+	  <h4 class="alert-heading">Avisos</h4>
+	  <p>Esta ferramenta está em fase de experimentação, portanto, paciência!</p>
+	  <hr>
+	  <p class="mb-0">A palavra SOTA é um acrônimo que, em inglês, siginifica State of the Art(em português: Estado da arte).</p>
+	</div>	
 </div>

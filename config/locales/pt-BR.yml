@@ -104,6 +104,10 @@ pt-BR:
       success: Anotação criada com sucesso.
     destroy:
       success: Anotação removida com sucesso.
+  welcome:
+    index:
+      welcome_title: Bem vindo(a) ao SOTA.
+      welcome_description: Escreva textos ciêntíficos de forma <strong>ágil</strong> e <strong>organizada</strong>.
 
   papers:
     remove_all:
