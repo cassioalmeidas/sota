@@ -1,7 +1,7 @@
 $(document).on 'trix-initialize', (e) ->
 	trix = e.target
 	toolBar = trix.toolbarElement
-	pasteUrl = $('#annotation_trix_input').data('pasteurl')
+	pasteUrl = $('#annotation_body').data('pasteurl')
 
 	button = document.createElement('button')
 	button.setAttribute 'type', 'button'
