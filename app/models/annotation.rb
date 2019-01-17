@@ -18,13 +18,19 @@ class Annotation < ApplicationRecord
 
   def citation
     cp = CiteProc::Processor.new style: 'associacao-brasileira-de-normas-tecnicas-eceme', format: 'text'
-    cp.import [paper.citeproc]
-    cp.render :citation, id: paper.citeproc['id']
+    if paper.citeproc
+      cp.import [paper.citeproc]
+      return cp.render :citation, id: paper.citeproc['id']
+    end
+    return nil
   end
 
   def bibliography
-    cp = CiteProc::Processor.new style: 'associacao-brasileira-de-normas-tecnicas-ipea', format: 'text'
-    cp.import [paper.citeproc]
-    cp.render :bibliography, id: paper.citeproc['id']
+    if paper.citeproc
+      cp = CiteProc::Processor.new style: 'associacao-brasileira-de-normas-tecnicas-ipea', format: 'text'
+      cp.import [paper.citeproc]
+      return cp.render :bibliography, id: paper.citeproc['id']
+    end 
+    return nil
   end
 end

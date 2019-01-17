@@ -24,10 +24,10 @@
 							<p><strong><%= t('.keywords', default: 'Keywords') %>: </strong><%= annotation.paper.keywords %></p>
 						<% end %>
 					<% end %>
-					<h3><%= t('.references', default: 'References')%></h3>
-					<% @bibliography.each do |bibliography| %>
-						<p><%= bibliography[0] %></p>
-					<% end %>
+						<h3><%= t('.references', default: 'References')%></h3>
+						<% @bibliography.each do |bibliography| %>
+							<p><%= bibliography[0] if bibliography %></p>
+						<% end %>
 				</div>
 			</div>
 		</div>
