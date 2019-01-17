@@ -19,10 +19,14 @@
 						<h2><%= cat %></h2>
 						<% annotations.each do |annotation| %>
 							<h5><%= annotation.paper.title %></h5>
-							<p><%= sanitize annotation.body %></p>
+							<p><%= sanitize annotation.body, tags: [] %> <%= annotation.citation %></p>
 							<p><%= annotation.paper.doi %></p>
 							<p><strong><%= t('.keywords', default: 'Keywords') %>: </strong><%= annotation.paper.keywords %></p>
 						<% end %>
+					<% end %>
+					<h3><%= t('.references', default: 'References')%></h3>
+					<% @bibliography.each do |bibliography| %>
+						<p><%= bibliography[0] %></p>
 					<% end %>
 				</div>
 			</div>

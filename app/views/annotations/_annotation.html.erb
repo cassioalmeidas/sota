@@ -1,6 +1,6 @@
 <p>
 	<strong><%= t('activerecord.attributes.annotation.category_name', default: 'Category') %> : </strong><%= annotation.category_name %>
 </p>
-<p><%= sanitize annotation.body %></p>
+<p><%= sanitize annotation.body %> <%= annotation.citation %></p>
 <%= link_to t('buttons.edit', default: 'Edit'), edit_annotation_path(@annotation), class: 'btn btn-sm btn-primary', remote: true %>
 <%= link_to t('buttons.remove', default: 'Remove'), annotation_path(@annotation), class: 'btn btn-sm btn-danger', remote: true, method: :delete, data: dataConfirmModal %>

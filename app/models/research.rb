@@ -20,6 +20,7 @@ class Research < ApplicationRecord
         paper.journal = p.try(:publisher)
         paper.doi = p.try(:doi)
         paper.url = p.try(:url)
+        paper.citeproc = p.to_citeproc
         paper.save
       end
     end

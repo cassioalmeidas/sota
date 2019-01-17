@@ -1,3 +1,4 @@
+
 pt-BR:
   dt_actions: Ações
   languages:
@@ -86,6 +87,7 @@ pt-BR:
       settings: Configurações
       reports: Relatórios
       keywords: Palavras-chave
+      references: Referências
     edit:
       title: Editando pesquisa
     create:
