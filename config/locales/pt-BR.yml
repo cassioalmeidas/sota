@@ -81,6 +81,7 @@ pt-BR:
       only_unannotated_papers: Sem anotações
       no_papers_msg: Sem artigos
       paste_abs_translated: Colar resumo traduzido
+      reject: Rejeitar
       
     annotations_reports:
       annotations_category_list: Lista de categorias de anotações
