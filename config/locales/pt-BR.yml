@@ -108,6 +108,8 @@ pt-BR:
   annotations:
     create:
       success: Anotação criada com sucesso.
+    reject:
+      success: Artigo rejeitado com sucesso.
     destroy:
       success: Anotação removida com sucesso.
   welcome:
@@ -118,6 +120,8 @@ pt-BR:
   papers:
     remove_all:
       success: 'Todos os artigos foram excluídos com sucesso.'
+
+
 
   activerecord:
     models:
