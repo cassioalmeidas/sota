@@ -17,7 +17,8 @@ Rails.application.routes.draw do
           get 'import'
         end
       end
-      resources :papers do 
+      resources :papers do
+        member { put :reject } 
         resources :annotations, shallow: true do
 
         end

@@ -23,6 +23,8 @@
 	<%= render @paper %>
 </div>
 
+<%= link_to t('.reject', default: 'Reject'), reject_research_paper_path(@research, @paper), class: 'btn btn-primary btn-lg btn-danger', method: :put %>
+
 <h4><%= t('.annotations', default: 'Annotations') %> </h4>
 <% if @paper.annotation.present? %>
 	<div id="annotation">
