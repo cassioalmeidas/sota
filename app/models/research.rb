@@ -11,15 +11,15 @@ class Research < ApplicationRecord
     bibtex.each do |p|
       if p.try(:title) 
         paper = self.papers.build
-        paper.title = p.title
-        paper.abstract = p.try(:abstract)
-        paper.keywords = p.try(:keywords)
-        paper.authors = p.author.to_s
-        paper.source = p.try(:source)
-        paper.publication_year = p.try(:year)
-        paper.journal = p.try(:publisher)
+        paper.title = p.title.delete('{}')
+        paper.abstract = p.try(:abstract).delete('{}')
+        paper.keywords = p.try(:keywords).delete('{}')
+        paper.authors = p.author.to_s.delete('{}')
+        paper.source = p.try(:source).delete('{}')
+        paper.publication_year = p.try(:year).delete('{}')
+        paper.journal = p.try(:publisher).delete('{}')
         paper.doi = p.try(:doi)
-        paper.url = p.try(:url)
+        paper.url = p.try(:url).delete('{}')
         paper.citeproc = p.to_citeproc
         paper.save
       end
