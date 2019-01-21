@@ -7,7 +7,7 @@ class Research < ApplicationRecord
   has_many :annotation_categories, through: :annotations
 
   def import_papers(file)
-    bibtex = BibTeX.open(file)
+    bibtex = BibTeX.open(file, filter: :latex)
     bibtex.each do |p|
       if p.try(:title) 
         paper = self.papers.build
