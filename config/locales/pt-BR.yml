@@ -105,6 +105,7 @@ pt-BR:
       success: O arquivo foi excluído com sucesso.
     import:
       success: O arquivo foi importado com sucesso.
+      error: Não foi possível importar o arquivo.
   annotations:
     create:
       success: Anotação criada com sucesso.

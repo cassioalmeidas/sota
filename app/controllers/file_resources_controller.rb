@@ -27,9 +27,13 @@ class FileResourcesController < ApplicationController
   def import 
     @file = @research.file_resources.find(params[:id])
     file_path = Rails.env.production? ? @file.file_url : @file.file.open()
-    @research.import_papers(file_path)
-    @file.update_columns(imported: true)
-    redirect_to retrieve_papers_research_path(@research), notice: t('.success', default: 'File resource was successfully imported')
+    begin
+      @research.import_papers(file_path)
+      @file.update_columns(imported: true)
+      redirect_to retrieve_papers_research_path(@research), notice: t('.success', default: 'File resource was successfully imported')
+    rescue BibTeX::ParseError
+      redirect_to retrieve_papers_research_path(@research), notice: t('.error', default: 'File resource not being imported')
+    end    
   end
 
   private 
