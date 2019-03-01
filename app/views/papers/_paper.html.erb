@@ -1,6 +1,6 @@
 <h1><%= @paper.title %></h1>
 <p class="abstract"><%= @paper.abstract %></p>
-<% if !@paper.doi.empty? %>
+<% if @paper.doi %>
   <p><%= link_to @paper.doi, "http://sci-hub.tw/#{@paper.doi}" %></p>
 <% end %>
 
