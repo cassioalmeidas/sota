@@ -6,6 +6,7 @@ json.annotations @annotations do |cat, annotations|
     json.doi annotation.paper.doi
     json.body sanitize(annotation.body, tags: []) + ' ' + annotation.citation
     json.keywords annotation.paper.keywords
+    json.journal  annotation.paper.journal
   end
 end
 json.bibliography @bibliography do |bibliography|
