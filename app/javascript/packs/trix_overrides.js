@@ -20,8 +20,7 @@ $(document).on('trix-initialize', function (e) {
     copyButton.addEventListener('click', function () {
       translate(abstract.innerHTML, { to: "pt" })
         .then(res => {
-          trixEditor.editor.insertString(res.text)
-          console.log(res.text)
+          trixEditor.editor.insertString(res.text);
         })
         .catch(err => {
           console.error(err);
