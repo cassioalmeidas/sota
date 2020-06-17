@@ -4,6 +4,7 @@
   "dependencies": {
     "docxtemplater": "^3.9.5",
     "file-saver": "^2.0.0",
+    "google-translate-api-browser": "^1.1.71",
     "jszip": "2",
     "jszip-utils": "^0.0.2"
   }
