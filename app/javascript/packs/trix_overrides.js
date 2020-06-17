@@ -1,6 +1,6 @@
 import { setCORS } from "google-translate-api-browser";
 // setting up cors-anywhere server address
-const translate = setCORS("http://cors-anywhere.herokuapp.com/");
+const translate = setCORS("https://cors-anywhere.herokuapp.com/");
 
 
 $(document).on('trix-initialize', function (e) {
