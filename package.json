@@ -2,10 +2,14 @@
   "name": "sota",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "5.1.1",
     "docxtemplater": "^3.9.5",
     "file-saver": "^2.0.0",
     "google-translate-api-browser": "^1.1.71",
     "jszip": "2",
     "jszip-utils": "^0.0.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
   }
 }

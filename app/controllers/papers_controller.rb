@@ -68,15 +68,6 @@ class PapersController < ApplicationController
     redirect_to retrieve_papers_research_path(@research), notice: t('.success', default: 'All papers was successfully destroyed')
   end
 
-
-  def translate
-    translate = Google::Cloud::Translate.new project: ENV['TRANSLATE_PROJECT']
-    @abstract_translated = translate.translate @paper.abstract, to: "pt-BR"
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def reject
     @paper.update_columns(rejected: true)
     redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Paper was successfully rejected.'))

@@ -53,7 +53,7 @@ gem 'pandoc-ruby'
 gem "citeproc-ruby", "~> 1.1"
 gem "csl-styles", "~> 1.0"
 gem 'acts_as_list'
-
+gem 'webpacker', '~> 5.x'
 
 # i18n
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
