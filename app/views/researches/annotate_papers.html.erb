@@ -26,14 +26,20 @@
 <%= link_to t('.reject', default: 'Reject'), reject_research_paper_path(@research, @paper), class: 'btn btn-primary btn-lg btn-danger', method: :put %>
 
 <h4><%= t('.annotations', default: 'Annotations') %> </h4>
-<% if @paper.annotation.present? %>
-	<div id="annotation">
-		<%= render @annotation %>
-	</div>
-<% else %>
-	<%= render 'annotations/form', annotation: [@research, @paper, @annotation] %>
-<% end %>
-<br />
+<ul>
+  <% @paper.annotations.each do |annotation| %>
+    <% if !annotation.new_record? %>
+      <li>
+        <h4><%= annotation.category_name %></h4>
+        <%= sanitize(annotation.body) %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= render 'annotations/form', annotation: [@research, @paper, @annotation] %>
+
+
 <%= will_paginate @papers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 <% else %>
 	<div class="alert alert-warning" role="alert">
