@@ -32,6 +32,7 @@
       <li>
         <h4><%= annotation.category_name %></h4>
         <%= sanitize(annotation.body) %>
+		<%= link_to 'Remover', annotation_path(annotation), class: 'btn btn-primary btn-sm btn-danger', method: :delete, data: dataConfirmModal %>
       </li>
     <% end %>
   <% end %>
