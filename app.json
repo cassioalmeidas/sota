@@ -4,7 +4,7 @@
   "website": "sota.cassioalmeidas.tk",
   "repository": "https://gitlab.com/cassioalmeidas/sota",
   "scripts": {
-    "dokku"{
+    "dokku": {
       "postdeploy": "bundle exec rails db:migrate"
     }
   },

@@ -62,7 +62,7 @@ gem 'i18n-js'
 
 
 gem 'rails_12factor', group: :production
-gem 'newrelic_rpm', group: :production
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
