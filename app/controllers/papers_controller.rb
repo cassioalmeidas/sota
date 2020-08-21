@@ -1,7 +1,5 @@
-require "google/cloud/translate"
-
 class PapersController < ApplicationController
-  before_action :set_paper, only: [:show, :edit, :update, :destroy, :translate, :reject]
+  before_action :set_paper, only: [:show, :edit, :update, :destroy, :translate, :reject, :unreject]
   before_action :set_research
 
 
@@ -71,6 +69,11 @@ class PapersController < ApplicationController
   def reject
     @paper.update_columns(rejected: true)
     redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Paper was successfully rejected.'))
+  end
+
+  def unreject
+    @paper.update_columns(rejected: false)
+    redirect_to(request.referrer || annotate_papers_research_path(@research), notice: t('.success', default: 'Paper was successfully accepted.'))
   end
 
   private

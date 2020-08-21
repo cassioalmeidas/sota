@@ -4,7 +4,7 @@
 			<%= active_link_to t('.all_papers', default: 'All papers'), annotate_papers_research_path(@research), class: 'flex-sm-fill text-sm-center nav-link' %>
 			<%= active_link_to t('.only_annotated_papers', default: 'Only annotated papers'), annotate_papers_research_path(@research, annotated: 1), class: 'flex-sm-fill text-sm-center nav-link' %>
 			<%= active_link_to t('.only_unannotated_papers', default: 'Only unannotated papers'), annotate_papers_research_path(@research, annotated: 0), class: 'flex-sm-fill text-sm-center nav-link' %>
-		  
+		  	<%= active_link_to t('.only_rejected_papers', default: 'Rejeitados'), annotate_papers_research_path(@research, rejected: 1), class: 'flex-sm-fill text-sm-center nav-link' %>
 		</nav>
 	</div>
 	<div class="col-sm">
@@ -23,7 +23,11 @@
 	<%= render @paper %>
 </div>
 
-<%= link_to t('.reject', default: 'Reject'), reject_research_paper_path(@research, @paper), class: 'btn btn-primary btn-lg btn-danger', method: :put %>
+<% if @paper.rejected? %>
+	<%= link_to t('.unreject', default: 'Aceitar'), unreject_research_paper_path(@research, @paper), class: 'btn btn-primary btn-lg btn-success', method: :put %>
+<% else %>
+	<%= link_to t('.reject', default: 'Reject'), reject_research_paper_path(@research, @paper), class: 'btn btn-primary btn-lg btn-danger', method: :put %>
+<% end %>
 
 <h4><%= t('.annotations', default: 'Annotations') %> </h4>
 <ul>

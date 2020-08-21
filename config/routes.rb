@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       end
       resources :papers do
         member { put :reject } 
+        member { put :unreject }
         resources :annotations, shallow: true do
 
         end

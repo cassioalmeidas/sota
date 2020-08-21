@@ -86,7 +86,8 @@ class ResearchesController < ApplicationController
   def annotate_papers
     add_breadcrumb proc { I18n.t('breadcrumbs.explore', default: 'explore') }, :research_path
     add_breadcrumb proc { I18n.t('breadcrumbs.annotate_papers', default: 'annotate papers') }, :annotate_papers_research_path
-    @papers = @research.papers.where(rejected: false).includes(:annotations).page(params[:page])
+    rejected_or_not =  params[:rejected].present? ? true : false
+    @papers = @research.papers.where(rejected: rejected_or_not).includes(:annotations).page(params[:page])
     if params[:annotated].present?
       params[:annotated] == '1' ? @papers = @papers.annotated : @papers = @papers.unannotated  
     end
